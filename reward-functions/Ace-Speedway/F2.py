@@ -1,11 +1,9 @@
 import math
 
-s = open('waypoints.txt', 'w+')
 def reward_function(params):
     
     # Getting the parameters used in this reward function
     waypoints = params["waypoints"]
-    s.write(str(waypoints))
     closest_waypoints = params["closest_waypoints"]
     heading = params["heading"]
     speed = params["speed"]
@@ -14,7 +12,7 @@ def reward_function(params):
     reward = 1.0
     
     # Initializing the threshold values for direction and speed
-    DIRECTION_THRESHOLD = 14 # My current research is into the direction threshold effect on model performance (specifically speed)
+    DIRECTION_THRESHOLD = 14
     SPEED_THRESHOLD = 1.0
 
     # Calculate the direction of the next waypoint
