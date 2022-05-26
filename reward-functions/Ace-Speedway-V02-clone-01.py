@@ -18,7 +18,7 @@ def reward_function(params):
     # Penalise the model if it goes off-track.
     if not all_wheels_on_track:
         reward = 1e-3
-    elif (track_width*0.5 - distance_from_center) <= 0.05:
+    elif (track_width*0.5 - distance_from_center) <= 0.01:
         reward *= 0.5
     # If the model is on the track, penalise it for moving slowly
     elif speed < SPEED_THRESHOLD:
