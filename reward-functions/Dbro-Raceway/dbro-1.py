@@ -9,16 +9,15 @@ def reward_function(params):
     progress = params['progress']
     all_wheels_on_track = params['all_wheels_on_track']
 
-    # Total num of steps we want the car to finish the lap, it will vary depends on the track length
-    TOTAL_NUM_STEPS = 300
+    STEPS_TO_COMPLETION = 300
 
     # Initialize the reward with typical value
-    reward = 1.0
+    reward = 0.0
 
-    if not all_wheels_on_track :
+    if not all_wheels_on_track:
         reward = 1e-3
     # Give additional reward if the car pass every 100 steps faster than expected
-    elif (steps % 100) == 0 and progress > (steps / TOTAL_NUM_STEPS) * 100 :
-        reward += 10.0
+    elif (steps % 100) == 0 and progress > (steps / STEPS_TO_COMPLETION) * 100 :
+        reward += 3.0
 
-    return float(reward)
+    return reward
