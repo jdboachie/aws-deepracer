@@ -1,8 +1,12 @@
+global reward
+reward = 0
+
 def reward_function(params):
     #############################################################################
     '''
     Complete the track in fewer steps
     '''
+    global reward
 
     # Read input variable
     steps = params['steps']
@@ -11,13 +15,10 @@ def reward_function(params):
 
     STEPS_TO_COMPLETION = 300
 
-    # Initialize the reward with typical value
-    reward = 0.0
-
     if not all_wheels_on_track:
         reward = 1e-3
     # Give additional reward if the car pass every 100 steps faster than expected
     elif (steps % 100) == 0 and progress > (steps / STEPS_TO_COMPLETION) * 100 :
-        reward += 3.0
+        reward += 1.0
 
     return reward
