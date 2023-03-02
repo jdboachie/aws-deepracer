@@ -1,11 +1,6 @@
-""" 
-Baguette
-````````
-A baguette is a long, thin type of bread of French origin that is commonly
-made from basic lean dough. It is distinguishable by its length and crisp
-crust.
 """
-
+The deepracer vehicle is guided to stay in the centre.
+"""
 from math import tanh
 
 def reward_function(params):
