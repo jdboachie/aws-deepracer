@@ -27,7 +27,5 @@ def reward_function(params):
 
     stray = tanh(track_width/2 - distance_from_center)
     reward = tanh((speed * 2) - stray)
-    if reward <= 0:
-        reward = 0.000
 
-    return reward
+    return max(reward, 0.000)
