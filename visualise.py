@@ -2,7 +2,7 @@
     "params" dictionaries and evaluating the reward function for each one.
 """
 import random
-from stray import reward_function
+from reward_functions.stray import reward_function
 
 def generate_random_params():
     '''
