@@ -1,9 +1,13 @@
-"""_summary_: This is a reward function that rewards the agent
-    for staying in the center of the track
-    and for completing the track in fewer steps.
+"""
+PROGRESS
+========
+This is a reward function that rewards the agent
+for staying in the center of the track
+and for completing the track in fewer steps.
 """
 
-from math import tanh, sin
+from math import tanh
+
 
 def reward_function(params):
     '''
